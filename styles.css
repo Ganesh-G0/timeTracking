@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --workLightRed: hsl(15, 100%, 70%);
+  --playSoftBlue: hsl(195, 74%, 62%);
+  --studyLightRed: hsl(348, 100%, 68%);
+  --exerciseLimeGreen: hsl(145, 58%, 55%);
+  --socialViolet: hsl(264, 64%, 52%);
+  --selfCareSoftOrange: hsl(43, 84%, 65%);
+  --veryDarkBlue: hsl(226, 43%, 10%);
+  --darkBlue: hsl(235, 46%, 20%);
+  --deSaturatedBlue: hsl(235, 45%, 61%);
+  --paleBlue: hsl(236, 100%, 87%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+html {
+  font-size: 62.5%;  
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: .8rem; 
+  border-radius: 1rem;
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;  
+  background-image: linear-gradient(180deg, var(--blue), var(--selfCareSoftOrange) );
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  color: white;
+  background-color: var(--veryDarkBlue);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 30rem;
+  display: grid;
+  gap: 3rem;
+}
+/* -------------------------------------hero section */
+main > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--darkBlue);
+  border-radius: 1rem;
+}
+.hero-img-txt {
+  border-radius: 1rem;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.hero-img-txt > figure > img {
+  border-radius: 50%;
+  border: 2px solid white;
+  max-width: calc(6rem + 1dvw);
+}
+.hero-img-txt > div {
+  align-items: start;
+  flex-direction: column;
+}
+.hero-img-txt > div > h1 {
+  font-weight: 100;
+  font-size: calc(1.5rem + .5dvw);
+  color: var(--paleBlue);
+}
+.hero-img-txt > div > p {
+  font-weight: 100;
+  font-size: calc(2rem + 1dvw);
+}
+.hero-btn {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.hero-btn > button {  
+  text-transform: capitalize;
+  font-size: calc(1rem + 1dvw);
+  border: 0;
+  color: var(--paleBlue);
+  cursor: pointer;
+  background-color: var(--darkBlue);
+}
+.hero-btn > .btn.active {
+  color: white;
+}
+.hero-btn > .btn:hover {
+  color: lightgray;
+}
+/* ------------------------------------------------section */
+.other-div { 
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  border-radius: 1.5rem;
+  font-weight: 100;
+  position: relative;
+}
+.other-div > div {  
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--darkBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media(hover:hover) {
+  .other-div > div:hover {
+    cursor: pointer;
+    background-color: var(--deSaturatedBlue);
+  }
+}
+@media(hover:none) {
+  .other-div > div:active {
+    cursor: pointer;
+    background-color: var(--deSaturatedBlue);
+  }
+}
+.other-div > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media(hover:hover) {
+  .other-div > div > div > img:hover {
+    cursor: pointer;
+    filter: brightness(50%);
+  }
+}
+@media(hover:none) {
+  .other-div > div > div > img:active {
+    cursor: pointer;
+    filter: brightness(50%);
+  }
+}
+.title {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: calc(1.5rem + .5dvw);
+}
+.currentHours {
+  font-weight: 100;
+  font-size: calc(2.5rem + 1dvw);
+}
+.previousHours {
+  color: var(--paleBlue);
+  text-transform: capitalize;
+  font-size: calc(1.2rem + .5dvw);
+}
+/* ------------------------------------------------work */
+.work {
+  background-color: var(--workLightRed);
+  background-image: url(./images/icon-work.svg);
+}
+.play {
+  background-color: var(--playSoftBlue);
+  background-image: url(./images/icon-play.svg);
+}
+.study {
+  background-color: var(--studyLightRed);
+  background-image: url(./images/icon-study.svg);
+}
+.exercise {
+  background-color: var(--exerciseLimeGreen);
+  background-image: url(./images/icon-exercise.svg);
+}
+.social {
+  background-color: var(--socialViolet);
+  background-image: url(./images/icon-social.svg);
+}
+.selfCare {
+  background-color: var(--selfCareSoftOrange);
+  background-image: url(./images/icon-self-care.svg);
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 120rem;
+    display: grid;
+    grid-template-areas: 
+    "hero work play study"
+    "hero exercise social selfCare"
+    ;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  main > div:first-child, .other-div {
+    width: 100%;
+  }
+  .hero-div { grid-area: hero; }
+  .work { grid-area: work; }
+  .play { grid-area: play; }
+  .study { grid-area: study; }
+  .exercise { grid-area: exercise; }
+  .social { grid-area: social; }
+  .selfCare { grid-area: selfCare; }
+  .hero-div {
+    height: 100%;
+    width: fit-content;
+  }
+  .hero-img-txt {
+    flex-direction: column;
+    align-items: start;
+  }
+  .hero-btn {
+    align-items: start;
+    flex-direction: column;
+  }
+  .other-div > div > div:last-child {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+}
